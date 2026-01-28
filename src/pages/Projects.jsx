@@ -151,14 +151,7 @@ function ProjectModal({ open, onClose, project }) {
                 ) : null}
 
                 <div className="mt-6 flex flex-wrap gap-3">
-                  <Button
-                    as="a"
-                    href={project.liveDemo}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <ExternalLink className="h-4 w-4" /> Live Demo
-                  </Button>
+                
                   <Button
                     as="a"
                     href={project.github}
