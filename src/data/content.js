@@ -28,7 +28,7 @@ export const skillsGrouped = [
   },
   {
     title: 'Database',
-    items: ['MongoDB'],
+    items: ['MongoDB','postgresql'],
   },
   {
     title: 'Tools',

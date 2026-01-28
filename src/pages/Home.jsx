@@ -63,15 +63,15 @@ export default function Home() {
               <Reveal delay={0.3}>
                 <div className="mt-7 grid gap-3 sm:grid-cols-2">
                   <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-soft">
-                    <div className="text-sm font-semibold text-slate-900">Recruiter-ready</div>
+                    <div className="text-sm font-semibold text-slate-900">Frontend Development</div>
                     <div className="mt-1 text-sm text-slate-600">
-                      Clear sections, clean typography, and measurable impact.
+                     Creating responsive, interactive user interfaces with HTML5, CSS3, JavaScript, and React. I focus on clean code, performance, and beautiful design.
                     </div>
                   </div>
                   <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-soft">
-                    <div className="text-sm font-semibold text-slate-900">Premium motion</div>
+                    <div className="text-sm font-semibold text-slate-900">Full-Stack Development</div>
                     <div className="mt-1 text-sm text-slate-600">
-                      Smooth reveal animations and micro-interactions.
+                      Building complete web applications using the MERN stack. From database design to API development to frontend implementation, I handle it all.
                     </div>
                   </div>
                 </div>
