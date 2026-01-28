@@ -7,7 +7,7 @@ export default function Skills() {
     <Section
       id="skills-page"
       title="Skills"
-      subtitle="Grouped overview of the skills I use to ship production-ready projects."
+      subtitle="I've developed a diverse set of skills throughout my career. Here's what I bring to the table."
     >
       <SkillsGrouped groups={skillsGrouped} />
     </Section>

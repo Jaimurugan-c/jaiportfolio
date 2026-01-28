@@ -17,28 +17,42 @@ export const profile = {
   },
 }
 
+import {
+  Code,
+  Server,
+  Database,
+  Wrench,
+  Users,
+} from 'lucide-react'
+
 export const skillsGrouped = [
   {
     title: 'Frontend',
-    items: ['HTML', 'CSS', 'JavaScript', 'React.js'],
+    icon: Code,
+    items: ['HTML', 'CSS', 'JavaScript', 'React.js', 'Tailwind CSS'],
   },
   {
     title: 'Backend',
+    icon: Server,
     items: ['Node.js', 'Express.js'],
   },
   {
     title: 'Database',
-    items: ['MongoDB','postgresql'],
+    icon: Database,
+    items: ['MongoDB', 'PostgreSQL'],
   },
   {
     title: 'Tools',
-    items: ['GitHub', 'VS Code', 'Postman'],
+    icon: Wrench,
+    items: ['Git', 'GitHub', 'VS Code', 'Postman','Linux'],
   },
   {
     title: 'Soft Skills',
+    icon: Users,
     items: ['Time Management', 'Problem Solving', 'Communication'],
   },
 ]
+
 
 export const experience = [
   {
