@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540">
+  <rect width="960" height="540" fill="#ffffff"/>
+  <rect x="48" y="48" width="864" height="444" rx="24" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
+  <rect x="88" y="96" width="784" height="36" rx="18" fill="#10b981" opacity="0.14"/>
+  <rect x="88" y="160" width="240" height="280" rx="20" fill="#ffffff" stroke="#10b981" opacity="0.35"/>
+  <rect x="352" y="160" width="240" height="280" rx="20" fill="#ffffff" stroke="#10b981" opacity="0.35"/>
+  <rect x="616" y="160" width="256" height="280" rx="20" fill="#ffffff" stroke="#10b981" opacity="0.35"/>
+  <text x="88" y="78" fill="#047857" font-size="18" font-family="ui-sans-serif, system-ui">ShopCart • Products</text>
+</svg>
