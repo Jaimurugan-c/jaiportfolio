@@ -2,18 +2,18 @@ export const profile = {
   name: 'Jai Murugan C',
   role: 'MERN Stack Developer',
   location: 'India',
-  email: 'jaimuruganc@example.com',
-  phone: '+91 00000 00000',
+  email: 'jaimurugan1703@gmail.com',
+  phone: '+91 7708338349',
   socials: {
-    github: 'https://github.com/',
-    linkedin: 'https://www.linkedin.com/',
+    github: 'https://github.com/Jaimurugan-c',
+    linkedin: 'https://www.linkedin.com/in/jaimuruganchandiran/',
     portfolio: '/',
   },
   cvUrl: '/Jai_Murugan_C_CV.pdf',
   hero: {
     headlinePrefix: "Hello, I'm",
     headlineName: 'Jai Murugan C',
-    typing: ['MERN Stack Developer', 'React.js Developer', 'Node.js Developer'],
+    typing: ['MERN Stack Developer', 'PERN Stack Developer ','React.js Developer', 'Node.js Developer'],
   },
 }
 

@@ -8,7 +8,7 @@ const messages = [
   'Consistency beats intensity.',
   'Progress, not perfection.',
   'One more push — you’ve got this.',
-  'Ship it. Learn fast. Improve.',
+  'Spread love everywhere you go',
 ]
 
 export default function RollTheDice() {
@@ -65,7 +65,7 @@ export default function RollTheDice() {
         <div>
           <div className="text-sm font-semibold text-slate-900">Roll the Dice</div>
           <div className="mt-1 text-sm text-slate-600">
-            Quick break with a motivational boost.
+            JustRoll
           </div>
         </div>
         <Button onClick={roll} size="sm">

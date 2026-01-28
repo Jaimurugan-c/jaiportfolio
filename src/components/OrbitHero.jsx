@@ -75,7 +75,7 @@ export default function OrbitHero() {
           <div className="relative">
             <div className="absolute -inset-3 rounded-full bg-brand-500/10" />
             <img
-              src="/profile.svg"
+              src="/jai.jpg"
               alt={profile.name}
               className="relative h-32 w-32 rounded-full border-2 border-brand-200 bg-white object-cover shadow-soft sm:h-36 sm:w-36"
               loading="eager"
