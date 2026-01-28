@@ -7,7 +7,7 @@ export default function Experience() {
   return (
     <Section
       id="experience"
-      title="Experience"
+      title="Experience & Education"
       subtitle="Roles and responsibilities that reflect my practical development work."
     >
       <div className="grid gap-4">

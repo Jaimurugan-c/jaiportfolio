@@ -2,6 +2,7 @@ import Reveal from '../components/Reveal.jsx'
 import Section from '../components/Section.jsx'
 import Card from '../components/Card.jsx'
 import { profile } from '../data/content.js'
+import Experience from './Experience.jsx'
 
 export default function About() {
   return (
@@ -47,6 +48,7 @@ export default function About() {
           </Card>
         </Reveal>
       </div>
+      <Experience/>
     </Section>
   )
 }

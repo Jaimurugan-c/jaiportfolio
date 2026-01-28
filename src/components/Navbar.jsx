@@ -14,7 +14,6 @@ export default function Navbar() {
     () => [
       { to: '/', label: 'Home' },
       { to: '/about', label: 'About Me' },
-      { to: '/experience', label: 'Experience' },
       { to: '/skills', label: 'Skills' },
       { to: '/projects', label: 'Projects' },
       { to: '/contact', label: 'Contact' },
