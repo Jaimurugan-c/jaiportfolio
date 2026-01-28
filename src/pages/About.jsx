@@ -44,6 +44,10 @@ export default function About() {
                 <div className="text-xs text-slate-500">Email</div>
                 <div className="font-medium">{profile.email}</div>
               </div>
+              <div>
+                <div className="text-xs text-slate-500">Availability</div>
+                <div className="font-medium">Freelance & Full-time</div>
+              </div>
             </div>
           </Card>
         </Reveal>

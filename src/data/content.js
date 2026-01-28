@@ -1,7 +1,7 @@
 export const profile = {
   name: 'Jai Murugan C',
   role: 'MERN Stack Developer',
-  location: 'India',
+  location: 'Salem,India',
   email: 'jaimurugan1703@gmail.com',
   phone: '+91 7708338349',
   socials: {
