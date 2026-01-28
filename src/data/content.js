@@ -42,13 +42,47 @@ export const skillsGrouped = [
 
 export const experience = [
   {
-    company: 'Your Company',
-    role: 'MERN Stack Developer',
-    period: '2024 - Present',
+    type: 'job',
+    role: 'PERN Stack Developer',
+    company: 'Teamup Consultants (Internship)',
+    period: 'Sep 2025 - Nov 2025',
     points: [
-      'Built responsive web experiences with React.js and Tailwind CSS.',
-      'Developed REST APIs using Node.js and Express.js.',
-      'Integrated MongoDB models and optimized queries for performance.',
+      'Developed full-stack PERN applications with PostgreSQL, Express.js, React.js, and Node.js',
+      'Built RESTful APIs and designed efficient database schemas',
+      'Implemented responsive and accessible UI components',
+    ],
+  },
+  {
+    type: 'job',
+    role: 'MERN Stack Developer',
+    company: 'Techforge (Internship)',
+    period: 'Jan 2025 - Aug 2025',
+    points: [
+      'Full-Stack Developer specializing in MongoDB, Express.js, React.js, and Node.js',
+      'Developed 10+ dynamic, scalable full-stack web applications',
+      'Integrated third-party APIs and payment gateways (Razorpay/Stripe)',
+    ],
+  },
+  {
+    type: 'job',
+    role: 'Frontend Developer',
+    company: 'Techforge (Internship)',
+    period: 'Jul 2024 - Dec 2024',
+    points: [
+      'Developed responsive and interactive user interfaces using HTML5, CSS3, JavaScript, and React',
+      'Created pixel-perfect, mobile-first designs with Tailwind CSS',
+      'Optimized web performance, accessibility (WCAG), and SEO',
+    ],
+  },
+  {
+    type: 'education',
+    role: "Bachelor's in Computer Science",
+    company: 'Sona College of Arts and Science, Salem, Tamil Nadu',
+    period: '2021 - 2024',
+    points: [
+      'Graduated with honors',
+      'Specialized in Web Development & Software Engineering',
+      'Completed multiple academic projects in full-stack development',
     ],
   },
 ]
