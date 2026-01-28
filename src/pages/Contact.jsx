@@ -1,4 +1,13 @@
-import { Mail, Phone, Send } from 'lucide-react'
+import {
+  Mail,
+  Phone,
+  Send,
+  Github,
+  Linkedin,
+  MapPin,
+  CheckCircle2,
+  AlertCircle,
+} from 'lucide-react'
 import { useState } from 'react'
 import Button from '../components/Button.jsx'
 import Card from '../components/Card.jsx'
@@ -7,100 +16,286 @@ import Section from '../components/Section.jsx'
 import { profile } from '../data/content.js'
 
 export default function Contact() {
-  const [status, setStatus] = useState('')
+  const [status, setStatus] = useState(null) // null | 'loading' | 'success'
+  const [error, setError] = useState(null)
 
   const onSubmit = (e) => {
     e.preventDefault()
-    setStatus('Thanks! Your message is ready to send via email.')
+    setStatus('loading')
+    setError(null)
 
     const form = new FormData(e.currentTarget)
-    const name = form.get('name')
-    const email = form.get('email')
-    const message = form.get('message')
+    const name = form.get('name')?.toString().trim()
+    const email = form.get('email')?.toString().trim()
+    const message = form.get('message')?.toString().trim()
 
-    const subject = encodeURIComponent(`Portfolio Contact: ${name}`)
-    const body = encodeURIComponent(`From: ${name} (${email})\n\n${message}`)
-    window.location.href = `mailto:${profile.email}?subject=${subject}&body=${body}`
+    if (!name || !email || !message) {
+      setError('Please fill in all fields')
+      setStatus(null)
+      return
+    }
+
+    const subject = encodeURIComponent(`Portfolio Contact from ${name}`)
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+    )
+
+    // Small delay to show loading state nicely
+    setTimeout(() => {
+      window.location.href = `mailto:${profile.email}?subject=${subject}&body=${body}`
+      setStatus('success')
+      setTimeout(() => setStatus(null), 4000)
+    }, 600)
   }
 
   return (
     <Section
       id="contact"
-      title="Contact"
-      subtitle="Want to collaborate or hire? Send a message — I’ll get back quickly."
+      title="Let's Start a Conversation"
+      subtitle="I'm currently open to new opportunities, interesting projects and good conversations."
+      className="bg-gradient-to-b from-white to-slate-50/70"
     >
-      <div className="grid gap-4 lg:grid-cols-3">
-        <Reveal>
-          <Card className="p-6 lg:col-span-2">
-            <form onSubmit={onSubmit} className="grid gap-4">
-              <div className="grid gap-4 sm:grid-cols-2">
-                <label className="grid gap-2 text-sm">
-                  <span className="font-medium text-slate-900">Name</span>
-                  <input
-                    name="name"
+      <div className="mx-auto max-w-6xl">
+        <div className="grid gap-8 lg:grid-cols-5 lg:gap-10">
+          {/* ===================== FORM ===================== */}
+          <Reveal className="lg:col-span-3">
+            <Card className="overflow-hidden border border-slate-200/70 bg-white/70 backdrop-blur-sm shadow-xl shadow-slate-200/30 transition-all hover:shadow-2xl hover:shadow-slate-300/40">
+              <div className="p-6 sm:p-8 lg:p-10">
+                <h3 className="mb-6 text-2xl font-semibold tracking-tight text-slate-800">
+                  Send me a message
+                </h3>
+
+                <form onSubmit={onSubmit} className="grid gap-6">
+                  <div className="grid gap-6 sm:grid-cols-2">
+                    <FloatingLabelInput
+                      label="Your Name"
+                      name="name"
+                      required
+                      autoComplete="name"
+                    />
+
+                    <FloatingLabelInput
+                      label="Email Address"
+                      name="email"
+                      type="email"
+                      required
+                      autoComplete="email"
+                    />
+                  </div>
+
+                  <FloatingLabelInput
+                    label="Your Message"
+                    name="message"
+                    as="textarea"
+                    rows={5}
                     required
-                    className="h-11 rounded-xl border border-slate-200 bg-white px-4 text-sm outline-none transition focus:border-brand-300 focus:ring-2 focus:ring-brand-500/20"
-                    placeholder="Your name"
                   />
-                </label>
-                <label className="grid gap-2 text-sm">
-                  <span className="font-medium text-slate-900">Email</span>
-                  <input
-                    name="email"
-                    type="email"
-                    required
-                    className="h-11 rounded-xl border border-slate-200 bg-white px-4 text-sm outline-none transition focus:border-brand-300 focus:ring-2 focus:ring-brand-500/20"
-                    placeholder="you@example.com"
-                  />
-                </label>
+
+                  <div className="flex flex-wrap items-center gap-4">
+                    <Button
+                      type="submit"
+                      disabled={status === 'loading'}
+                      className="min-w-[160px] gap-2"
+                    >
+                      {status === 'loading' ? (
+                        <>Sending…</>
+                      ) : (
+                        <>
+                          <Send className="h-4 w-4" />
+                          Send Message
+                        </>
+                      )}
+                    </Button>
+
+                    {status === 'success' && (
+                      <div className="flex items-center gap-2 text-sm font-medium text-green-700">
+                        <CheckCircle2 className="h-5 w-5" />
+                        Opening your mail app…
+                      </div>
+                    )}
+
+                    {error && (
+                      <div className="flex items-center gap-2 text-sm font-medium text-red-700">
+                        <AlertCircle className="h-5 w-5" />
+                        {error}
+                      </div>
+                    )}
+                  </div>
+                </form>
               </div>
+            </Card>
+          </Reveal>
 
-              <label className="grid gap-2 text-sm">
-                <span className="font-medium text-slate-900">Message</span>
-                <textarea
-                  name="message"
-                  required
-                  rows={6}
-                  className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none transition focus:border-brand-300 focus:ring-2 focus:ring-brand-500/20"
-                  placeholder="Tell me about your project or role…"
-                />
-              </label>
+          {/* ===================== INFO + SOCIALS ===================== */}
+          <Reveal delay={0.1} className="lg:col-span-2">
+            <Card className="h-full border border-slate-200/70 bg-gradient-to-br from-slate-50 to-white p-6 shadow-xl shadow-slate-200/20 backdrop-blur-sm transition-all hover:shadow-2xl lg:p-8">
+              <div className="space-y-8">
+                <div>
+                  <h4 className="mb-4 text-lg font-semibold text-slate-800">
+                    Get in Touch
+                  </h4>
 
-              <div className="flex flex-wrap items-center gap-3">
-                <Button type="submit">
-                  <Send className="h-4 w-4" /> Send
-                </Button>
-                {status ? <div className="text-sm text-slate-600">{status}</div> : null}
+                  <div className="space-y-3">
+                    <ContactLink
+                      icon={<Mail className="h-5 w-5" />}
+                      href={`mailto:${profile.email}`}
+                      label={profile.email}
+                      color="brand"
+                    />
+
+                    <ContactLink
+                      icon={<Phone className="h-5 w-5" />}
+                      href={`tel:${profile.phone.replace(/\s/g, '')}`}
+                      label={profile.phone}
+                      color="emerald"
+                    />
+
+                    <div className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white/60 px-4 py-3 text-slate-700">
+                      <MapPin className="h-5 w-5 text-rose-600" />
+                      {profile.location}
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <h4 className="mb-4 text-lg font-semibold text-slate-800">
+                    Find me online
+                  </h4>
+
+                  <div className="grid grid-cols-2 gap-4">
+                    <SocialLink
+                      href={profile.socials.linkedin}
+                      icon={<Linkedin className="h-5 w-5" />}
+                      label="LinkedIn"
+                      color="blue"
+                    />
+
+                    <SocialLink
+                      href={profile.socials.github}
+                      icon={<Github className="h-5 w-5" />}
+                      label="GitHub"
+                      color="slate"
+                    />
+                  </div>
+                </div>
               </div>
-            </form>
-          </Card>
-        </Reveal>
-
-        <Reveal delay={0.06}>
-          <Card className="p-6">
-            <div className="text-sm font-semibold text-slate-900">Direct</div>
-            <div className="mt-4 space-y-3 text-sm text-slate-700">
-              <a
-                href={`mailto:${profile.email}`}
-                className="flex items-center gap-2 rounded-xl border border-slate-200 px-4 py-3 transition hover:border-brand-200 hover:bg-brand-50"
-              >
-                <Mail className="h-4 w-4 text-brand-700" /> {profile.email}
-              </a>
-              <a
-                href={`tel:${profile.phone.replace(/\s/g, '')}`}
-                className="flex items-center gap-2 rounded-xl border border-slate-200 px-4 py-3 transition hover:border-brand-200 hover:bg-brand-50"
-              >
-                <Phone className="h-4 w-4 text-brand-700" /> {profile.phone}
-              </a>
-            </div>
-
-            <div className="mt-6 text-sm text-slate-600">
-              Prefer WhatsApp/LinkedIn? Update the links in{' '}
-              <span className="font-mono text-xs">src/data/content.js</span>.
-            </div>
-          </Card>
-        </Reveal>
+            </Card>
+          </Reveal>
+        </div>
       </div>
     </Section>
+  )
+}
+
+// ────────────────────────────────────────────────
+// Reusable sub-components
+// ────────────────────────────────────────────────
+
+function FloatingLabelInput({ label, name, type = 'text', as = 'input', ...props }) {
+  const [focused, setFocused] = useState(false)
+  const [hasValue, setHasValue] = useState(false)
+
+  const handleChange = (e) => setHasValue(!!e.target.value.trim())
+
+  return (
+    <div className="relative">
+      {as === 'textarea' ? (
+        <textarea
+          id={name}
+          name={name}
+          className={`
+            peer w-full rounded-xl border border-slate-200 bg-white/60 px-4 py-3 text-sm
+            outline-none transition-all duration-200 placeholder-transparent
+            focus:border-brand-400 focus:ring-2 focus:ring-brand-500/20
+            ${focused || hasValue ? 'pt-6 pb-2' : 'py-3'}
+          `}
+          placeholder={label}
+          onFocus={() => setFocused(true)}
+          onBlur={(e) => {
+            setFocused(false)
+            setHasValue(!!e.target.value.trim())
+          }}
+          onChange={handleChange}
+          {...props}
+        />
+      ) : (
+        <input
+          id={name}
+          name={name}
+          type={type}
+          className={`
+            peer w-full rounded-xl border border-slate-200 bg-white/60 px-4 py-3 text-sm
+            outline-none transition-all duration-200 placeholder-transparent
+            focus:border-brand-400 focus:ring-2 focus:ring-brand-500/20
+            ${focused || hasValue ? 'pt-6 pb-2' : 'py-3'}
+          `}
+          placeholder={label}
+          onFocus={() => setFocused(true)}
+          onBlur={(e) => {
+            setFocused(false)
+            setHasValue(!!e.target.value.trim())
+          }}
+          onChange={handleChange}
+          {...props}
+        />
+      )}
+
+      <label
+        htmlFor={name}
+        className={`
+          pointer-events-none absolute left-4 origin-left text-sm font-medium text-slate-500
+          transition-all duration-200
+          ${focused || hasValue
+            ? '-translate-y-2 scale-90 text-brand-600'
+            : 'translate-y-3.5 scale-100 text-slate-400'}
+        `}
+      >
+        {label}
+      </label>
+    </div>
+  )
+}
+
+function ContactLink({ icon, href, label, color = 'brand' }) {
+  const colors = {
+    brand: 'hover:border-brand-300 hover:bg-brand-50/70 text-brand-700',
+    emerald: 'hover:border-emerald-300 hover:bg-emerald-50/70 text-emerald-700',
+  }
+
+  return (
+    <a
+      href={href}
+      className={`
+        group flex items-center gap-3 rounded-xl border border-slate-200 bg-white/60 px-4 py-3
+        text-sm transition-all ${colors[color] || colors.brand}
+      `}
+    >
+      <span className="text-slate-500 transition-colors group-hover:text-current">
+        {icon}
+      </span>
+      <span className="font-medium">{label}</span>
+    </a>
+  )
+}
+
+function SocialLink({ href, icon, label, color = 'slate' }) {
+  const colors = {
+    blue: 'hover:border-blue-400/50 hover:bg-blue-50/60 text-blue-700',
+    slate: 'hover:border-slate-400/50 hover:bg-slate-100/60 text-slate-700',
+  }
+
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      className={`
+        flex items-center justify-center gap-2.5 rounded-xl border border-slate-200 bg-white/60
+        px-5 py-3.5 text-sm font-medium transition-all ${colors[color] || colors.slate}
+      `}
+    >
+      {icon}
+      {label}
+    </a>
   )
 }
