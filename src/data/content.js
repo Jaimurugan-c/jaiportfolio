@@ -110,7 +110,7 @@ export const projects = {
       description:
         'A full-stack personal blog application built using the MERN stack. This platform allows an admin to securely log in and manage blog content, while users can explore blogs focused on travel, books, movies, and personal writings. The application is designed with a clean UI and a scalable backend, showcasing real-world CRUD operations and authentication flow.',
       tech: ['React', 'Node.js', 'Express', 'MongoDB', 'JWT', 'Tailwind'],
-      screenshots: ['/projects/taskflow-1.svg', '/projects/adminshop.png'],
+      screenshots: ['/projects/main.png', '/projects/adminblog.png','/projects/main2.png'],
       liveDemo: 'https://example.com',
       github: 'https://github.com/Jaimurugan-c/jaiblog',
       highlights: [
@@ -127,7 +127,7 @@ export const projects = {
       description:
         'A full-stack e-commerce web application developed using the MERN stack, designed to simulate a real-world online shopping experience. The platform includes a secure admin panel for managing products, categories, orders, and users, while customers can browse products, add items to the cart, and place orders through an intuitive interface.',
       tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Tailwind'],
-      screenshots: ['/projects/ecom.png', '/projects/adminshop.png'],
+      screenshots: ['/projects/ecom.png', '/projects/adminshop.png','/projects/shopy2.png'],
     
       github: 'https://github.com/Jaimurugan-c/E-comMern',
       highlights: ['Product catalog', 'Cart & checkout UX', 'Admin product management'],
