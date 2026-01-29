@@ -137,16 +137,16 @@ export const projects = {
     {
       title: 'Landing Page UI',
       subtitle: 'Clean responsive marketing page',
-      tech: ['HTML', 'Tailwind', 'JavaScript'],
-      liveDemo: 'https://example.com',
-      github: 'https://github.com/',
+      tech: ['HTML', 'Bootstrap', 'JavaScript'],
+      liveDemo: 'https://freshyy-landing.vercel.app/',
+      github: 'https://github.com/Jaimurugan-c/freshyy-landing-',
     },
     {
-      title: 'Restaurant Website',
+      title: 'Coffee shop Website',
       subtitle: 'Responsive multi-section layout',
-      tech: ['HTML', 'CSS', 'JavaScript'],
-      liveDemo: 'https://example.com',
-      github: 'https://github.com/',
+      tech: ['HTML', 'CSS', 'JavaScript','Tailwind CSS'],
+      liveDemo: 'https://resturnant.vercel.app/',
+      github: 'https://github.com/Jaimurugan-c/resturnant',
     },
   ],
 }
