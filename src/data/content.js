@@ -57,6 +57,17 @@ export const skillsGrouped = [
 export const experience = [
   {
     type: 'job',
+    role: 'MERN Stack Developer',
+    company: 'Tyccun',
+    period: 'Jan 2026 – Present',
+    points: [
+      'Engineered full-stack features for a B2B networking platform using MongoDB, Express.js, React.js, and Node.js — covering user profiles, business portfolios, catalog system, authentication, reporting, and admin workflows',
+      'Delivered responsive, accessible UI/UX improvements and integrated RESTful APIs with a focus on performance optimization and scalable architecture',
+      'Diagnosed and resolved critical bugs across frontend and backend, reducing load times and improving overall platform stability for production users',
+    ],
+  },
+  {
+    type: 'job',
     role: 'PERN Stack Developer',
     company: 'Teamup Consultants (Internship)',
     period: 'Sep 2025 - Nov 2025',
@@ -132,6 +143,31 @@ export const projects = {
       github: 'https://github.com/Jaimurugan-c/E-comMern',
       highlights: ['Product catalog', 'Cart & checkout UX', 'Admin product management'],
     },
+     {
+    slug: 'tyccun-mern',
+    title: 'Tyccun (MERN)',
+    subtitle: 'B2B Networking Platform | Business Portfolio & Catalog System',
+    description:
+      'A full-stack B2B networking and business platform built using the MERN stack. This application allows users to create business profiles, manage catalogs, interact with posts, report content, and build professional portfolios. It includes authentication, admin workflows, verification system, and a scalable backend architecture designed for real-world use cases.',
+
+    tech: ['React', 'Node.js', 'Express', 'MongoDB', 'JWT', 'Tailwind'],
+
+    screenshots: [
+      '/projects/tycuun.jpeg',
+      '/projects/tycuun2.png'
+    ],
+
+    liveDemo: 'https://your-live-link.com',
+    github: 'https://github.com/your-repo-link',
+
+    highlights: [
+      'Business portfolio and catalog management system',
+      'User authentication with secure JWT-based login',
+      'Reporting system and admin moderation workflow',
+      'Responsive UI with modern UX design',
+      'Scalable MERN architecture with REST APIs'
+    ]
+  }
   ],
   web: [
     {
